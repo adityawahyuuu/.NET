@@ -1,13 +1,8 @@
-using graphQL.Application.Query;
+using graphQL.Application;
 
 var builder = WebApplication.CreateBuilder(args);
-
-builder.Services
-    .AddGraphQLServer()
-    .AddQueryType<QueryGetBooks>();
+builder.Services.AddApplication();
 
 var app = builder.Build();
-
 app.MapGraphQL();
-
 app.Run();
